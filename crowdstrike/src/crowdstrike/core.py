@@ -233,7 +233,7 @@ class CrowdStrike:
         config_file_path = os.path.dirname(os.path.abspath(__file__)) + "/../config.yml"
         if not os.path.isfile(config_file_path):
             return {}
-        return yaml.load(open(config_file_path), Loader=yaml.FullLoader)
+        return yaml.load(open(config_file_path), Loader=yaml.SafeLoader)
 
     @staticmethod
     def _create_author() -> Identity:
